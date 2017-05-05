@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/lib/phaser.min.js" type="text/javascript"></script>
+    <script src="js/Boot.js" type="text/javascript"></script>
+    <script src="js/Preloader.js" type="text/javascript"></script>
+    <script src="js/StartMenu.js" type="text/javascript"></script>
+    <script src="js/Game.js" type="text/javascript"></script>
+    <script src="js/Tutorial.js" type="text/javascript"></script>
+    <script src="js/GameOver.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="gameContainer"></div>
+    <script>
+      window.onload = function(){
+        var game = new Phaser.Game(600, 800, Phaser.AUTO, 'gameContainer');
+        game.state.add('Boot', CircleColors.Boot);
+        game.state.add('Preloader', CircleColors.Preloader);
+        game.state.add('StartMenu', CircleColors.StartMenu);
+        game.state.add('Game', CircleColors.Game);
+        game.state.add('Tutorial', CircleColors.Tutorial);
+        game.state.add('GameOver', CircleColors.GameOver);
+        game.state.start('Boot');
+      }
+
+    </script>
+
+    <style>
+      #gameContainer canvas{
+        margin:auto;
+      }
+    </style>
+  </body>
+</html>
